@@ -51,7 +51,7 @@ pip install claude-agent-sdk fastapi "uvicorn[standard]" pandas numpy requests
 
 `fg-index/today_signal.py`의 커버드콜 쿨다운 판정이 신호상 명목 종목명
 ("TIGER 미국나스닥100타겟데일리커버드콜")으로 매매기록을 찾는데, 실제 매수는 세금 문제로
-다른 종목("TIGER 배당커버드콜액티브(472150)")에 하고 있어서 그대로 쓰면 항상
+다른 종목("TIGER 배당커버드콜액티브")에 하고 있어서 그대로 쓰면 항상
 "이전 매수 기록 없음"으로 잘못 판단했다. `fabot-auto-trade`의 실제 실행 스크립트가 쓰는
 `cooldown_key` 매핑을 `tools_impl.query_fg_signal()`에도 명시적으로 적용해 고쳤고,
 수정 전/후 실제 조회 결과로 차이를 확인했다(수정 전: "이전 매수 기록 없음" / 수정 후:
