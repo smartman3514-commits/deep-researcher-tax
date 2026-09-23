@@ -87,8 +87,9 @@ for i, q in enumerate(example_qs):
 
 if run or question:
     with result_area:
-        with st.spinner("코디네이터가 구역을 나누고 서브에이전트를 실행하는 중... (보통 30초~1분 걸려요)"):
-            result = graph.answer(question)
+        with st.status("코디네이터가 질문을 처리하는 중... (보통 30초~2분 걸려요)", expanded=True) as status:
+            result = graph.answer(question, on_step=lambda msg: status.update(label=msg))
+            status.update(label="완료", state="complete")
 
         st.subheader("탄 경로")
         st.code(result["trace"], language=None)

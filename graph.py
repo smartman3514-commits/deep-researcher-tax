@@ -143,35 +143,51 @@ async def review(question: str, answer_text: str) -> bool:
     return "SUFFICIENT" in verdict.upper() and "INSUFFICIENT" not in verdict.upper()
 
 
-async def answer_async(question: str) -> dict:
+async def answer_async(question: str, on_step=None) -> dict:
+    """on_step: 선택적 콜백(str) — 데모 화면이 "지금 어느 단계인지" 실시간으로 보여줄 때 쓴다.
+    질문마다 LLM을 5~7번 순차/병렬로 호출해서 30초~2분 걸릴 수 있는데, 예전엔 스피너
+    문구가 처음부터 끝까지 안 바뀌어서 사용자가 "멈춘 것 아닌가" 오해했다(실사용 중 발견)."""
+    def step(msg: str):
+        if on_step:
+            on_step(msg)
+
     trace = []
 
     if CONFIG["ablation"].get("single_llm_only"):
         # 절제실험용: 코디네이터/서브에이전트 구조 없이 전체 코퍼스를 한 번에 통째로 던진다.
+        step("전체 코퍼스를 통째로 LLM에 전달하는 중...")
         all_text = "\n\n---\n\n".join(f"[문서 id={d['id']}]\n{d['text']}" for d in CORPUS)
         prompt = f"전체 문서:\n\n{all_text}\n\n질문: {question}"
         final = await _call_llm(prompt, AGGREGATE_SYSTEM_PROMPT, CONFIG["synthesis_model"])
         return {"question": question, "answer": final, "categories_used": ["ALL(single_llm_only)"],
                 "subagent_outputs": [], "trace": "single_llm_only(ablation)"}
 
+    step("코디네이터가 질문을 보고 관련 구역을 고르는 중...")
     categories = await dispatch(question)
     trace.append(f"dispatch → {categories}")
 
+    step(f"서브에이전트 {len(categories)}개({', '.join(categories)})가 각자 구역을 조사하는 중...")
     partials = await asyncio.gather(*(run_subagent(question, c) for c in categories))
     trace.append(f"subagents({len(partials)}) 완료")
 
+    step("서브에이전트들의 답을 코디네이터가 하나로 합치는 중...")
     final = await aggregate(question, partials)
+
+    step("합쳐진 답이 질문에 충분히 답했는지 점검하는 중...")
     sufficient = await review(question, final)
     trace.append(f"review → {'SUFFICIENT' if sufficient else 'INSUFFICIENT'}")
 
     if not sufficient and set(categories) != set(CATEGORIES.keys()):
         # 부족하면 딱 한 번만, 전 구역으로 넓혀서 재시도한다(무한 루프 방지).
+        step("점검 결과 불충분 — 전 구역으로 넓혀서 다시 조사하는 중...")
         all_categories = list(CATEGORIES.keys())
         partials = await asyncio.gather(*(run_subagent(question, c) for c in all_categories))
+        step("넓혀서 다시 조사한 답을 재합성하는 중...")
         final = await aggregate(question, partials)
         categories = all_categories
         trace.append(f"재dispatch(전 구역) → {categories}")
 
+    step("완료")
     return {
         "question": question,
         "answer": final,
@@ -181,8 +197,8 @@ async def answer_async(question: str) -> dict:
     }
 
 
-def answer(question: str) -> dict:
-    return asyncio.run(answer_async(question))
+def answer(question: str, on_step=None) -> dict:
+    return asyncio.run(answer_async(question, on_step=on_step))
 
 
 if __name__ == "__main__":
