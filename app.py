@@ -39,13 +39,34 @@ with st.expander("이 데모에 대해", expanded=False):
 questions = json.loads((BASE / "data" / "questions.json").read_text(encoding="utf-8"))["items"]
 example_qs = [item["question"] for item in questions]
 
-col1, col2 = st.columns([3, 1])
-with col1:
-    question = st.text_input("질문을 입력하세요", value=st.session_state.get("q", example_qs[2]))
-with col2:
-    st.write("")
-    st.write("")
-    run = st.button("질문하기", type="primary", use_container_width=True)
+# 기본 st.button은 라벨을 한 줄로만 표시해서 긴 질문이 "..."로 잘린다 — 질문 전체가
+# 읽혀야 어떤 예시를 고를지 판단할 수 있으므로 버튼 라벨이 줄바꿈되게 CSS로 푼다.
+st.markdown(
+    """
+    <style>
+    div[data-testid="stButton"] button {
+        white-space: normal !important;
+        height: auto;
+        text-align: left;
+        line-height: 1.4;
+    }
+    div[data-testid="stButton"] button p,
+    div[data-testid="stButton"] button div {
+        white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+question = st.text_area(
+    "질문을 입력하세요",
+    value=st.session_state.get("q", example_qs[2]),
+    height=80,
+)
+run = st.button("질문하기", type="primary")
 
 st.caption("예시 질문 (클릭하면 바로 채워집니다):")
 cols = st.columns(2)
