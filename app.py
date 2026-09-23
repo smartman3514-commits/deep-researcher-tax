@@ -72,7 +72,10 @@ question = st.text_area(
     placeholder="무엇을 도와드릴까요?",
     height=80,
 )
-run = st.button("질문하기", type="primary")
+# 버튼 자리를 비워두고, 실행 중에는 같은 자리에 "답변 중입니다"(비활성) 버튼을 대신 그린다 —
+# 눌렀는데 버튼이 그대로면 반응했는지 모르겠다는 피드백 반영.
+button_slot = st.empty()
+run = button_slot.button("질문하기", type="primary", key="ask")
 
 # 결과 영역을 버튼 바로 아래, 예시 질문 목록보다 위에 둔다 — 예전엔 예시 질문 그리드
 # 밑에 있어서 "질문하기"를 눌러도 스크롤해야만 반응(스피너)이 보였다(실사용 중 발견).
@@ -86,6 +89,7 @@ for i, q in enumerate(example_qs):
         st.rerun()
 
 if run or question:
+    button_slot.button("⏳ 답변 중입니다...", type="primary", disabled=True, key="ask_busy")
     with result_area:
         with st.status("코디네이터가 질문을 처리하는 중... (보통 30초~2분 걸려요)", expanded=True) as status:
             result = graph.answer(question, on_step=lambda msg: status.update(label=msg))
@@ -102,6 +106,8 @@ if run or question:
         for p in result["subagent_outputs"]:
             with st.expander(f"구역: {p['category']}"):
                 st.markdown(p["output"].replace("\n", "  \n"))
+
+    button_slot.button("질문하기", type="primary", key="ask_again")
 
 st.divider()
 st.caption(
