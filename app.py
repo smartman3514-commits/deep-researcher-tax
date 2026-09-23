@@ -68,12 +68,13 @@ st.markdown(
 
 question = st.text_area(
     "질문을 입력하세요",
-    value=st.session_state.get("q", example_qs[2]),
+    value=st.session_state.get("q", ""),
+    placeholder="무엇을 도와드릴까요?",
     height=80,
 )
 run = st.button("질문하기", type="primary")
 
-st.caption("예시 질문 (클릭하면 바로 채워집니다):")
+st.caption("또는 아래 예시 질문 중 하나를 눌러도 바로 실행됩니다:")
 cols = st.columns(2)
 for i, q in enumerate(example_qs):
     if cols[i % 2].button(q, key=f"ex-{i}", use_container_width=True):
