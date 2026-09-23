@@ -1,0 +1,207 @@
+{
+  "rows": [
+    {
+      "id": "q01",
+      "question": "건강보험 피부양자 자격을 잃게 되는 소득 기준은 얼마인가?",
+      "difficulty": "easy",
+      "categories_used": [
+        "tax_law"
+      ],
+      "requires_categories": [
+        "tax_law"
+      ],
+      "category_recall": 1.0,
+      "category_precision": 1.0,
+      "n_cited_docs": 1,
+      "n_docs_investigated": 9,
+      "cited_doc_usage_ratio": 0.111,
+      "n_invalid_citations": 0
+    },
+    {
+      "id": "q02",
+      "question": "금융투자소득세는 원래 언제 시행될 예정이었고, 왜 아직 시행되지 않고 있는가?",
+      "difficulty": "easy",
+      "categories_used": [
+        "account",
+        "fabot_log",
+        "tax_law"
+      ],
+      "requires_categories": [
+        "tax_law"
+      ],
+      "category_recall": 1.0,
+      "category_precision": 0.333,
+      "n_cited_docs": 1,
+      "n_docs_investigated": 36,
+      "cited_doc_usage_ratio": 0.028,
+      "n_invalid_citations": 0
+    },
+    {
+      "id": "q03",
+      "question": "FABOT이 실측한 472150의 연 배당수익률(13~20%)이 앞으로도 유지된다고 가정할 때, 한 사람이 배당소득 2천만원 상한을 넘지 않으려면 이 계좌에 최대 얼마까지 투자할 수 있는가?",
+      "difficulty": "medium",
+      "categories_used": [
+        "account",
+        "fabot_log",
+        "tax_law"
+      ],
+      "requires_categories": [
+        "fabot_log",
+        "tax_law"
+      ],
+      "category_recall": 1.0,
+      "category_precision": 0.667,
+      "n_cited_docs": 1,
+      "n_docs_investigated": 36,
+      "cited_doc_usage_ratio": 0.028,
+      "n_invalid_citations": 0
+    },
+    {
+      "id": "q04",
+      "question": "FABOT이 배당소득을 가족 구성원 명의로 분산해 각자 2천만원 밑으로 관리하는 전략은 법적으로 문제가 없는가?",
+      "difficulty": "medium",
+      "categories_used": [
+        "tax_law",
+        "account",
+        "fabot_log",
+        "fabot_doc"
+      ],
+      "requires_categories": [
+        "fabot_log",
+        "account"
+      ],
+      "category_recall": 1.0,
+      "category_precision": 0.5,
+      "n_cited_docs": 0,
+      "n_docs_investigated": 43,
+      "cited_doc_usage_ratio": 0.0,
+      "n_invalid_citations": 0
+    },
+    {
+      "id": "q05",
+      "question": "472150을 ISA 계좌로 옮겨서 담으면, 지금(일반 계좌) 대비 세제상 어떤 차이가 생기는가?",
+      "difficulty": "medium",
+      "categories_used": [
+        "account",
+        "tax_law"
+      ],
+      "requires_categories": [
+        "account",
+        "fabot_log"
+      ],
+      "category_recall": 0.5,
+      "category_precision": 0.5,
+      "n_cited_docs": 0,
+      "n_docs_investigated": 18,
+      "cited_doc_usage_ratio": 0.0,
+      "n_invalid_citations": 0
+    },
+    {
+      "id": "q06",
+      "question": "커버드콜 투자를 연금저축이나 IRP로 옮기면, FABOT의 매매 규칙(3거래일 쿨다운, F&G 임계값 기반 추가매수)을 그대로 적용할 수 있는가?",
+      "difficulty": "hard",
+      "categories_used": [
+        "account",
+        "fabot_doc",
+        "fabot_log",
+        "tax_law"
+      ],
+      "requires_categories": [
+        "account",
+        "fabot_log"
+      ],
+      "category_recall": 1.0,
+      "category_precision": 0.5,
+      "n_cited_docs": 0,
+      "n_docs_investigated": 43,
+      "cited_doc_usage_ratio": 0.0,
+      "n_invalid_citations": 0
+    },
+    {
+      "id": "q07",
+      "question": "FABOT이 실계좌로 전환해 TQQQ를 매도할 경우, 어떤 세금을 각오해야 하는가?",
+      "difficulty": "medium",
+      "categories_used": [
+        "account",
+        "fabot_doc",
+        "fabot_log",
+        "tax_law"
+      ],
+      "requires_categories": [
+        "fabot_log",
+        "tax_law"
+      ],
+      "category_recall": 1.0,
+      "category_precision": 0.5,
+      "n_cited_docs": 0,
+      "n_docs_investigated": 43,
+      "cited_doc_usage_ratio": 0.0,
+      "n_invalid_citations": 0
+    },
+    {
+      "id": "q08",
+      "question": "FABOT의 배당 세금 대응 전략이 2026-07-23부터 2026-09-20까지 어떻게 바뀌어왔는지 시간순으로 정리해줘.",
+      "difficulty": "hard",
+      "categories_used": [
+        "account",
+        "fabot_doc",
+        "fabot_log",
+        "tax_law"
+      ],
+      "requires_categories": [
+        "fabot_log"
+      ],
+      "category_recall": 1.0,
+      "category_precision": 0.25,
+      "n_cited_docs": 0,
+      "n_docs_investigated": 43,
+      "cited_doc_usage_ratio": 0.0,
+      "n_invalid_citations": 0
+    },
+    {
+      "id": "q09",
+      "question": "국내 상장주식 양도소득세에서 소액주주가 비과세인 이유와, ETF 매매차익 과세 구분 기준은 같은 원리를 공유하는가?",
+      "difficulty": "medium",
+      "categories_used": [
+        "tax_law",
+        "account",
+        "fabot_log",
+        "fabot_doc"
+      ],
+      "requires_categories": [
+        "tax_law",
+        "account"
+      ],
+      "category_recall": 1.0,
+      "category_precision": 0.5,
+      "n_cited_docs": 1,
+      "n_docs_investigated": 43,
+      "cited_doc_usage_ratio": 0.023,
+      "n_invalid_citations": 0
+    },
+    {
+      "id": "q10",
+      "question": "종합소득세 신고 대상 기준과 건강보험 피부양자 자격 기준이 똑같이 '2천만원'을 쓰는 것은 우연인가? FABOT의 가족 명의 분산 전략이 왜 이 두 기준을 동시에 피해가려는 설계인지 설명해줘.",
+      "difficulty": "hard",
+      "categories_used": [
+        "fabot_doc",
+        "fabot_log",
+        "tax_law"
+      ],
+      "requires_categories": [
+        "account",
+        "tax_law",
+        "fabot_log"
+      ],
+      "category_recall": 0.667,
+      "category_precision": 0.667,
+      "n_cited_docs": 0,
+      "n_docs_investigated": 34,
+      "cited_doc_usage_ratio": 0.0,
+      "n_invalid_citations": 0
+    }
+  ],
+  "avg_recall": 0.917,
+  "avg_precision": 0.542,
+  "avg_citation_usage": 0.019
+}

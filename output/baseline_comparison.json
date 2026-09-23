@@ -1,0 +1,124 @@
+{
+  "summary": {
+    "multi_agent_pipeline": {
+      "avg_recall": 1.0,
+      "avg_citation_usage": 0.046
+    },
+    "single_llm_baseline": {
+      "avg_recall": 0.0,
+      "avg_citation_usage": 0.0
+    }
+  },
+  "rows": [
+    {
+      "id": "q01",
+      "difficulty": "easy",
+      "label": "multi_agent_pipeline",
+      "category_recall": 1.0,
+      "category_precision": 1.0,
+      "n_cited_docs": 1,
+      "n_docs_investigated": 9,
+      "cited_doc_usage_ratio": 0.111,
+      "n_invalid_citations": 0
+    },
+    {
+      "id": "q03",
+      "difficulty": "medium",
+      "label": "multi_agent_pipeline",
+      "category_recall": 1.0,
+      "category_precision": 0.667,
+      "n_cited_docs": 0,
+      "n_docs_investigated": 36,
+      "cited_doc_usage_ratio": 0.0,
+      "n_invalid_citations": 0
+    },
+    {
+      "id": "q05",
+      "difficulty": "medium",
+      "label": "multi_agent_pipeline",
+      "category_recall": 1.0,
+      "category_precision": 0.5,
+      "n_cited_docs": 3,
+      "n_docs_investigated": 43,
+      "cited_doc_usage_ratio": 0.07,
+      "n_invalid_citations": 0
+    },
+    {
+      "id": "q06",
+      "difficulty": "hard",
+      "label": "multi_agent_pipeline",
+      "category_recall": 1.0,
+      "category_precision": 0.5,
+      "n_cited_docs": 2,
+      "n_docs_investigated": 43,
+      "cited_doc_usage_ratio": 0.047,
+      "n_invalid_citations": 0
+    },
+    {
+      "id": "q08",
+      "difficulty": "hard",
+      "label": "multi_agent_pipeline",
+      "category_recall": 1.0,
+      "category_precision": 0.25,
+      "n_cited_docs": 0,
+      "n_docs_investigated": 43,
+      "cited_doc_usage_ratio": 0.0,
+      "n_invalid_citations": 0
+    },
+    {
+      "id": "q01",
+      "difficulty": "easy",
+      "label": "single_llm_baseline",
+      "category_recall": 0.0,
+      "category_precision": 0.0,
+      "n_cited_docs": 2,
+      "n_docs_investigated": 0,
+      "cited_doc_usage_ratio": 0.0,
+      "n_invalid_citations": 0
+    },
+    {
+      "id": "q03",
+      "difficulty": "medium",
+      "label": "single_llm_baseline",
+      "category_recall": 0.0,
+      "category_precision": 0.0,
+      "n_cited_docs": 4,
+      "n_docs_investigated": 0,
+      "cited_doc_usage_ratio": 0.0,
+      "n_invalid_citations": 0
+    },
+    {
+      "id": "q05",
+      "difficulty": "medium",
+      "label": "single_llm_baseline",
+      "category_recall": 0.0,
+      "category_precision": 0.0,
+      "n_cited_docs": 4,
+      "n_docs_investigated": 0,
+      "cited_doc_usage_ratio": 0.0,
+      "n_invalid_citations": 0
+    },
+    {
+      "id": "q06",
+      "difficulty": "hard",
+      "label": "single_llm_baseline",
+      "category_recall": 0.0,
+      "category_precision": 0.0,
+      "n_cited_docs": 8,
+      "n_docs_investigated": 0,
+      "cited_doc_usage_ratio": 0.0,
+      "n_invalid_citations": 0
+    },
+    {
+      "id": "q08",
+      "difficulty": "hard",
+      "label": "single_llm_baseline",
+      "category_recall": 0.0,
+      "category_precision": 0.0,
+      "n_cited_docs": 3,
+      "n_docs_investigated": 0,
+      "cited_doc_usage_ratio": 0.0,
+      "n_invalid_citations": 0
+    }
+  ]
+}

@@ -1,0 +1,246 @@
+[
+  {
+    "condition": "full",
+    "elapsed_sec": 322.0,
+    "avg_llm_calls_per_question": 6.2,
+    "avg_recall": 1.0,
+    "avg_precision": 0.583,
+    "avg_citation_usage": 0.044,
+    "avg_invalid_citations": 0.0,
+    "rows": [
+      {
+        "id": "q01",
+        "n_llm_calls": 4,
+        "category_recall": 1.0,
+        "category_precision": 1.0,
+        "n_cited_docs": 1,
+        "n_docs_investigated": 9,
+        "cited_doc_usage_ratio": 0.111,
+        "n_invalid_citations": 0
+      },
+      {
+        "id": "q03",
+        "n_llm_calls": 6,
+        "category_recall": 1.0,
+        "category_precision": 0.667,
+        "n_cited_docs": 4,
+        "n_docs_investigated": 36,
+        "cited_doc_usage_ratio": 0.111,
+        "n_invalid_citations": 0
+      },
+      {
+        "id": "q05",
+        "n_llm_calls": 7,
+        "category_recall": 1.0,
+        "category_precision": 0.5,
+        "n_cited_docs": 0,
+        "n_docs_investigated": 43,
+        "cited_doc_usage_ratio": 0.0,
+        "n_invalid_citations": 0
+      },
+      {
+        "id": "q06",
+        "n_llm_calls": 7,
+        "category_recall": 1.0,
+        "category_precision": 0.5,
+        "n_cited_docs": 0,
+        "n_docs_investigated": 43,
+        "cited_doc_usage_ratio": 0.0,
+        "n_invalid_citations": 0
+      },
+      {
+        "id": "q08",
+        "n_llm_calls": 7,
+        "category_recall": 1.0,
+        "category_precision": 0.25,
+        "n_cited_docs": 0,
+        "n_docs_investigated": 43,
+        "cited_doc_usage_ratio": 0.0,
+        "n_invalid_citations": 0
+      }
+    ]
+  },
+  {
+    "condition": "no_routing",
+    "elapsed_sec": 244.3,
+    "avg_llm_calls_per_question": 7.0,
+    "avg_recall": 1.0,
+    "avg_precision": 0.4,
+    "avg_citation_usage": 0.009,
+    "avg_invalid_citations": 0.0,
+    "rows": [
+      {
+        "id": "q01",
+        "n_llm_calls": 7,
+        "category_recall": 1.0,
+        "category_precision": 0.25,
+        "n_cited_docs": 0,
+        "n_docs_investigated": 43,
+        "cited_doc_usage_ratio": 0.0,
+        "n_invalid_citations": 0
+      },
+      {
+        "id": "q03",
+        "n_llm_calls": 7,
+        "category_recall": 1.0,
+        "category_precision": 0.5,
+        "n_cited_docs": 0,
+        "n_docs_investigated": 43,
+        "cited_doc_usage_ratio": 0.0,
+        "n_invalid_citations": 0
+      },
+      {
+        "id": "q05",
+        "n_llm_calls": 7,
+        "category_recall": 1.0,
+        "category_precision": 0.5,
+        "n_cited_docs": 0,
+        "n_docs_investigated": 43,
+        "cited_doc_usage_ratio": 0.0,
+        "n_invalid_citations": 0
+      },
+      {
+        "id": "q06",
+        "n_llm_calls": 7,
+        "category_recall": 1.0,
+        "category_precision": 0.5,
+        "n_cited_docs": 2,
+        "n_docs_investigated": 43,
+        "cited_doc_usage_ratio": 0.047,
+        "n_invalid_citations": 0
+      },
+      {
+        "id": "q08",
+        "n_llm_calls": 7,
+        "category_recall": 1.0,
+        "category_precision": 0.25,
+        "n_cited_docs": 0,
+        "n_docs_investigated": 43,
+        "cited_doc_usage_ratio": 0.0,
+        "n_invalid_citations": 0
+      }
+    ]
+  },
+  {
+    "condition": "no_review",
+    "elapsed_sec": 218.9,
+    "avg_llm_calls_per_question": 4.6,
+    "avg_recall": 0.9,
+    "avg_precision": 0.6,
+    "avg_citation_usage": 0.027,
+    "avg_invalid_citations": 0.0,
+    "rows": [
+      {
+        "id": "q01",
+        "n_llm_calls": 3,
+        "category_recall": 1.0,
+        "category_precision": 1.0,
+        "n_cited_docs": 1,
+        "n_docs_investigated": 9,
+        "cited_doc_usage_ratio": 0.111,
+        "n_invalid_citations": 0
+      },
+      {
+        "id": "q03",
+        "n_llm_calls": 5,
+        "category_recall": 1.0,
+        "category_precision": 0.667,
+        "n_cited_docs": 0,
+        "n_docs_investigated": 36,
+        "cited_doc_usage_ratio": 0.0,
+        "n_invalid_citations": 0
+      },
+      {
+        "id": "q05",
+        "n_llm_calls": 4,
+        "category_recall": 0.5,
+        "category_precision": 0.5,
+        "n_cited_docs": 0,
+        "n_docs_investigated": 18,
+        "cited_doc_usage_ratio": 0.0,
+        "n_invalid_citations": 0
+      },
+      {
+        "id": "q06",
+        "n_llm_calls": 6,
+        "category_recall": 1.0,
+        "category_precision": 0.5,
+        "n_cited_docs": 1,
+        "n_docs_investigated": 43,
+        "cited_doc_usage_ratio": 0.023,
+        "n_invalid_citations": 0
+      },
+      {
+        "id": "q08",
+        "n_llm_calls": 5,
+        "category_recall": 1.0,
+        "category_precision": 0.333,
+        "n_cited_docs": 0,
+        "n_docs_investigated": 36,
+        "cited_doc_usage_ratio": 0.0,
+        "n_invalid_citations": 0
+      }
+    ]
+  },
+  {
+    "condition": "single_llm",
+    "elapsed_sec": 192.5,
+    "avg_llm_calls_per_question": 1.0,
+    "avg_recall": 0.0,
+    "avg_precision": 0.0,
+    "avg_citation_usage": 0.0,
+    "avg_invalid_citations": 0.0,
+    "rows": [
+      {
+        "id": "q01",
+        "n_llm_calls": 1,
+        "category_recall": 0.0,
+        "category_precision": 0.0,
+        "n_cited_docs": 2,
+        "n_docs_investigated": 0,
+        "cited_doc_usage_ratio": 0.0,
+        "n_invalid_citations": 0
+      },
+      {
+        "id": "q03",
+        "n_llm_calls": 1,
+        "category_recall": 0.0,
+        "category_precision": 0.0,
+        "n_cited_docs": 0,
+        "n_docs_investigated": 0,
+        "cited_doc_usage_ratio": 0.0,
+        "n_invalid_citations": 0
+      },
+      {
+        "id": "q05",
+        "n_llm_calls": 1,
+        "category_recall": 0.0,
+        "category_precision": 0.0,
+        "n_cited_docs": 6,
+        "n_docs_investigated": 0,
+        "cited_doc_usage_ratio": 0.0,
+        "n_invalid_citations": 0
+      },
+      {
+        "id": "q06",
+        "n_llm_calls": 1,
+        "category_recall": 0.0,
+        "category_precision": 0.0,
+        "n_cited_docs": 6,
+        "n_docs_investigated": 0,
+        "cited_doc_usage_ratio": 0.0,
+        "n_invalid_citations": 0
+      },
+      {
+        "id": "q08",
+        "n_llm_calls": 1,
+        "category_recall": 0.0,
+        "category_precision": 0.0,
+        "n_cited_docs": 4,
+        "n_docs_investigated": 0,
+        "cited_doc_usage_ratio": 0.0,
+        "n_invalid_citations": 0
+      }
+    ]
+  }
+]
