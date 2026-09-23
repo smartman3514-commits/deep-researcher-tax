@@ -177,6 +177,10 @@ def answer(question: str) -> dict:
 
 if __name__ == "__main__":
     import sys
+    # Windows PowerShell/cmd 콘솔은 기본 cp949라, 답변에 ⚠ 같은 유니코드 기호가
+    # 섞이면 print()가 UnicodeEncodeError로 죽는다(실측으로 겪음) — 모르는 문자는
+    # 깨진 채로라도 보이는 게 스크립트가 죽는 것보다 낫다.
+    sys.stdout.reconfigure(errors="replace")
     q = " ".join(sys.argv[1:]) or "건강보험 피부양자 자격을 잃게 되는 소득 기준은 얼마인가?"
     result = answer(q)
     print(f"Q: {q}")
