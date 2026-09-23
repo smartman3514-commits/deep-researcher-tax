@@ -74,6 +74,10 @@ question = st.text_area(
 )
 run = st.button("질문하기", type="primary")
 
+# 결과 영역을 버튼 바로 아래, 예시 질문 목록보다 위에 둔다 — 예전엔 예시 질문 그리드
+# 밑에 있어서 "질문하기"를 눌러도 스크롤해야만 반응(스피너)이 보였다(실사용 중 발견).
+result_area = st.container()
+
 st.caption("또는 아래 예시 질문 중 하나를 눌러도 바로 실행됩니다:")
 cols = st.columns(2)
 for i, q in enumerate(example_qs):
@@ -82,20 +86,21 @@ for i, q in enumerate(example_qs):
         st.rerun()
 
 if run or question:
-    with st.spinner("코디네이터가 구역을 나누고 서브에이전트를 실행하는 중..."):
-        result = graph.answer(question)
+    with result_area:
+        with st.spinner("코디네이터가 구역을 나누고 서브에이전트를 실행하는 중... (보통 30초~1분 걸려요)"):
+            result = graph.answer(question)
 
-    st.subheader("탄 경로")
-    st.code(result["trace"], language=None)
-    st.write("조사한 구역:", ", ".join(result["categories_used"]))
+        st.subheader("탄 경로")
+        st.code(result["trace"], language=None)
+        st.write("조사한 구역:", ", ".join(result["categories_used"]))
 
-    st.subheader("답변")
-    st.markdown(result["answer"].replace("\n", "  \n"))
+        st.subheader("답변")
+        st.markdown(result["answer"].replace("\n", "  \n"))
 
-    st.subheader("서브에이전트별 부분 답변")
-    for p in result["subagent_outputs"]:
-        with st.expander(f"구역: {p['category']}"):
-            st.markdown(p["output"].replace("\n", "  \n"))
+        st.subheader("서브에이전트별 부분 답변")
+        for p in result["subagent_outputs"]:
+            with st.expander(f"구역: {p['category']}"):
+                st.markdown(p["output"].replace("\n", "  \n"))
 
 st.divider()
 st.caption(
